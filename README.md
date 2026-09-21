@@ -1,6 +1,10 @@
 # Early Warning System for Loan Default Risk
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Render-brightgreen?style=for-the-badge&logo=render)](https://loanrisk-hvof.onrender.com)
+🔗 **Live Application:** [https://loanrisk-hvof.onrender.com](https://loanrisk-hvof.onrender.com)
+
 A Java Spring Boot mini project that flags loan customers as **Low / Medium / High risk**
+
 using a transparent, rule-based scoring engine (no black-box AI) — based on their last 3 EMI payments.
 
 ## Tech Stack
