@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Log EMI Payment</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f6f8; }
+        form { background: white; padding: 24px; border-radius: 8px; max-width: 400px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        label { display: block; margin-top: 12px; font-weight: bold; color: #374151; }
+        input { width: 100%; padding: 8px; margin-top: 4px; box-sizing: border-box; border: 1px solid #d1d5db; border-radius: 4px; }
+        button { margin-top: 20px; padding: 10px 18px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; }
+        a { display: inline-block; margin-top: 12px; color: #2563eb; text-decoration: none; }
+        .hint { font-size: 13px; color: #6b7280; }
+    </style>
+</head>
+<body>
+
+<h1>Log EMI Payment</h1>
+<p>Customer: <strong th:text="${customer.name}"></strong></p>
+
+<form th:action="@{/customers/{id}/emi(id=${customer.id})}" method="post">
+    <label>Due Date</label>
+    <input type="date" name="dueDate" required>
+
+    <label>Paid Date</label>
+    <input type="date" name="paidDate">
+    <p class="hint">Leave "Paid Date" empty if the EMI hasn't been paid yet (will be marked MISSED).</p>
+
+    <button type="submit">Save Payment</button>
+</form>
+
+<a th:href="@{/}">← Back to Dashboard</a>
+
+</body>
+</html>
